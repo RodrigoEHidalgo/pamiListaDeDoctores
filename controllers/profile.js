@@ -1,25 +1,26 @@
 const express = require("express");
 const router = express.Router();
 
-// Ruta principal
-router.get("/", (req, res) => {
+router.get("/doctors", (req, res) => {
   const doctors = [
     {
       name: "Generico",
       specialty: "",
       zone: "",
       clinics: "",
-      availability: "No disponible hasta el 00/00",
+      availability: "no disponible",
+      availableUntil: "00/00",
     },
     {
       name: "Generico",
       specialty: "",
       zone: "",
       clinics: "",
-      availability: "Actualmente disponible",
+      availability: "disponible",
+      availableUntil: "",
     },
   ];
-  res.render("index", { doctors });
+  res.render("doctores", { doctors });
 });
 
 module.exports = router;

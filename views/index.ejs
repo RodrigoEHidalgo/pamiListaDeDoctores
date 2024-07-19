@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
+<%- include("./partials/head", { title: "Prestadores UGL 17" }) %>
+
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <!-- header -->
+    <%- include("./partials/header") %>
+
+      <!-- cuerpo -->
+      <main>
+        <%- include("./partials/filtro") %>
+          <%- include("./partials/lista") %>
+      </main>
   </body>
+
 </html>

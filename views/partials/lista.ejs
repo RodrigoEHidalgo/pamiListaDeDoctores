@@ -1,0 +1,33 @@
+<!-- lista -->
+<div class="doctor-list">
+
+    <!-- perfil de doctor -->
+    <% doctors.forEach(function(doctor) { %>
+        <div class="doctor-card">
+            <div class="doctor-info">
+                <div class="doctor-avatar">
+                    <img src="/images/default-avatar.png" alt="Doctor">
+                </div>
+                <!-- detalle del perfil -->
+                <div class="doctor-details">
+                    <h2>Dr. <%= doctor.name %>
+                    </h2>
+                    <p>Especialidad: <%= doctor.specialty %>
+                    </p>
+                    <p>Zona: <%= doctor.zone %>
+                    </p>
+                    <p>Clínicas: <%= doctor.clinics %>
+                    </p>
+                </div>
+            </div>
+            <!-- disponibilidad -->
+            <div class="doctor-availability">
+                <p class="<%= doctor.availability === 'disponible' ? 'available' : 'unavailable' %>">
+                    <%= doctor.availability==='disponible' ? 'Actualmente disponible' : 'No disponible hasta el ' +
+                        doctor.availableUntil %>
+                </p>
+                <button class="relief-button">RELEVO</button>
+            </div>
+        </div>
+        <% }); %>
+</div>
